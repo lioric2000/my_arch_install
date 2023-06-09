@@ -19,15 +19,6 @@ mkinitcpio -p linux
 
 pacman -S networkmanager network-manager-applet os-prober reflector rsync terminus-font xdg-user-dirs xdg-utils zsh grml-zsh-config
 
-
-systemctl enable zfs-import-cache
-systemctl enable zfs-import-scan
-systemctl enable zfs-mount
-systemctl enable zfs-share
-systemctl enable zfs-zed
-systemctl enable zfs.target
-
-
 zgenhostid $(hostid)
 
 echo "edit /etc/default/grub "
