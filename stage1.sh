@@ -74,7 +74,7 @@ mount ${BDISK} /mnt/boot/efi
 
 pacman -Syy
 
-pacstrap /mt base base-devel dkms git amd-ucode linux linux-firmware linux-headers nani vim grub efibootmgr openssh
+pacstrap /mt base base-devel dkms git amd-ucode linux linux-firmware linux-headers nani vim grub efibootmgr openssh wget
 
 genfstab -U -p /mnt >> /mnt/etc/fstab
 echo " run command and then run next stage2.sh "
