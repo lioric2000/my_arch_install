@@ -11,3 +11,25 @@ systemctl enable zfs-mount
 systemctl enable zfs-share
 systemctl enable zfs-zed
 systemctl enable zfs.target
+
+
+
+useradd -mU -s /bin/zsh -G \
+sys,log,network,floppy,scanner,power,rfkill,users,video,storage,optical,lp,audio,wheel,adm \
+gamlet
+
+passwd gamlet
+
+passwd
+
+visudo
+
+cp -rp /etc/xdg/reflector/reflector.conf /etc/xdg/reflector/reflector.conf.ORIG
+
+echo -e '--country RU
+--protocol https
+--latest 5
+--sort rate
+--save /et c/pacman.d/mirrorlist' > /etc/xdg/reflector/reflector.conf
+exit
+
