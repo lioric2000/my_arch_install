@@ -23,17 +23,17 @@ read MYDISK
 #parted --script ${MYDISK} mklabel gpt mkpart non-fs 5MB% 512MB mkpart primary 512MB 100% set 1 bios_grub on set 2 boot on
 
 #prepare boot
-BDISK=`echo "${MYDISK}1"
+BDISK=`echo "${MYDISK}1"`
 mkfs.vfat ${BDISK}
 
 #prepare zfs
 modprobe zfs
 lsmod |grep -i zfs
 
-ZDISK=`echo "${MYDISK}2"
+ZDISK=`echo "${MYDISK}2"`
 zpool create -f \
   -O ashift=12 \
-  -O relatime=on
+  -O relatime=on \
   -O acltype=posixacl \
   -O canmount=off \
   -O dnodesize=auto \
