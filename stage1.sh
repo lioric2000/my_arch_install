@@ -31,17 +31,30 @@ modprobe zfs
 lsmod |grep -i zfs
 
 ZDISK=`echo "${MYDISK}2"`
+
+#zpool create -f \
+#             -o ashift=12         \
+#             -O acltype=posixacl       \
+#             -O relatime=on            \
+#             -O xattr=sa               \
+#             -O dnodesize=legacy       \
+#             -O normalization=formD    \
+#             -O mountpoint=none        \
+#             -O canmount=off           \
+#             -O devices=off            \
+#             -R /mnt                   \
+#             zroot /dev/disk/by-id/id-to-partition-partx
+
 zpool create -f \
   -O ashift=12 \
-  -O relatime=on \
   -O acltype=posixacl \
-  -O canmount=off \
-  -O dnodesize=auto \
-  -O normalization=formD \
-  -O devices=off \
-  -O atime=off \
+  -O relatime=on \
   -O xattr=sa \
+  -O dnodesize=auto \
+  -O normalization=formD \ 
   -O mountpoint=none \
+  -O canmount=off \
+  -O devices=off \ #-O atime=off \
   -R /mnt zroot ${ZDISK}
   
 zpool status
