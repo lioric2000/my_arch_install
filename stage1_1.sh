@@ -25,3 +25,18 @@ zfs create                                        rpool/var/log
 zfs create -o mountpoint=/var/lib -o canmount=off rpool/var/lib
 zfs create                                        rpool/var/lib/libvirt
 zfs create                                        rpool/var/lib/docker
+
+zpool export zroot
+zpool import -d ${ZDISK}  -R /mnt zroot -N
+
+zfs mount zroot/ROOT/default
+zfs mount -a
+
+df -k
+
+zpool set bootfs=zroot/ROOT/default zroot
+zpool set cachefile=/etc/zfs/zpool.cache zroot
+
+mkdir -p /mnt/{etc/zfs,boot/efi}
+cp /etc/zfs/zpool.cache /mnt/etc/zfs/zpool.cache
+mount ${BDISK} /mnt/boot/efi
