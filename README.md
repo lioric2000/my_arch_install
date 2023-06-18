@@ -17,3 +17,5 @@ https://wiki.archlinux.org/title/ZFS
 https://archlinux.org.ru/forum/topic/17491/
 
 https://pikabu.ru/story/prostoy_sposob_ustanovki_archlinux_v_2022_godu_9089008
+
+https://www.makeuseof.com/fix-dual-booting-linux-wrong-windows-time/
