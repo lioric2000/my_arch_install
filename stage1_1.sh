@@ -1,5 +1,5 @@
 zpool create \
-    -o ashift=12 \
+    -o ashift=9 \
     -o autotrim=on \
     -R "${MNT}" \
     -O acltype=posixacl \
