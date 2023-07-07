@@ -50,7 +50,7 @@ zpool create -f \
   -O acltype=posixacl \
   -O relatime=on \
   -O xattr=sa \
-  -O dnodesize=auto \
+  -O dnodesize=legacy \
   -O normalization=formD \ 
   -O mountpoint=none \
   -O canmount=off \
