@@ -46,7 +46,7 @@ ZDISK=`echo "${MYDISK}2"`
 #             zroot /dev/disk/by-id/id-to-partition-partx
 
 zpool create -f \
-  -O ashift=12 \
+  -O ashift=9 \
   -O acltype=posixacl \
   -O relatime=on \
   -O xattr=sa \
